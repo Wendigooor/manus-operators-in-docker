@@ -1,0 +1,10 @@
+services:
+  openmanus:
+    build: .
+    volumes:
+      - ./config:/app/OpenManus/config
+    ports:
+      - "8080:8080"  # Host port mapping to container
+    stdin_open: true
+    tty: true
+    command: ["python", "main.py", "--port", "8080"]
